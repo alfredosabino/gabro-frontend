@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './screens/Home';
-import SignIn from './screens/Signin';
-import SignUp from './screens/Signup';
+import SignIn from './screens/SignIn';
+import SignUp from './screens/SignUp';
 import ManageLinks from './screens/Manage/Links';
 import ManageLinksCreate from './screens/Manage/Links/Create';
 import ManageLinksEdit from './screens/Manage/Links/Edit';
