@@ -34,7 +34,7 @@ const Links = ({ links, linkList }) => {
                             <span classname="text-primary clearfix">{link.url}</span>
                         </div>
                         <div className="ml-auto p-2 clearfix">
-                            <span className="float-left">Edit</span>
+                            <Link to={`/manage/links/edit/${link.id}`}>Edit</Link>
                             <span className="float-rigth">Delete</span>
                         </div>
                     </div>
