@@ -5,7 +5,6 @@ export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 
 export const signUp = (data) => {
-
     const payload = apiPost('/auth/sign-up', data);
     return { type: SIGN_UP, payload };
 };
@@ -16,6 +15,5 @@ export const signIn = (data) => {
 };
 
 export const signOut = () => {
-
     return { type: SIGN_OUT, payload: {} };
-}
+}; 

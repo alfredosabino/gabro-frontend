@@ -3,7 +3,7 @@ import { setAccount, setToken, setRefreshToken, removeAccount, removeToken, remo
 
 const intialState = {
     account: null
-}
+};
 
 export default function (state = intialState, action) {
     const { type, payload } = action;
@@ -23,14 +23,13 @@ export default function (state = intialState, action) {
 
             return { ...state, account };
         case SIGN_OUT: {
-
             removeAccount();
             removeToken();
             removeRefreshToken();
-            return { ...intialState, account: null };
-        }
 
+            return { ...intialState, account: null };
+        };
         default:
             return state;
-    }
-}
+    };
+};
