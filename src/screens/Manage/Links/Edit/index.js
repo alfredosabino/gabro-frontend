@@ -4,24 +4,28 @@ import Layout from '../../../Layouts/Manage';
 import FormGroup from '../../../../components/FormGroup';
 import FormCheck from '../../../../components/FormCheck';
 
-import { linkGet } from '../../../../actions/LinkActions';
+import { linkGet, linkUpdate } from '../../../../actions/LinkActions';
 import { connect } from 'react-redux';
+import { getFormData } from '../../../../helpers/form';
 
-const Edit = ({ link, linkGet }) => {
+const Edit = ({ link, linkGet, linkUpdate }) => {
     const { id } = useParams();
 
     useEffect(() => {
         linkGet(id);
     }, [id, linkGet])
 
-    console.log('*** Edit.id', id);
-    console.log('*** Edit.id', link);
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const data = getFormData();
+        linkUpdate(id, data);
+    };
 
     return (
         <Layout>
             <h1>Edit Link</h1>
             <div>
-                <form>
+                <form onSubmit={submitHandler}>
                     <FormGroup label="Label" name="Label" data={link} type="text" />
                     <FormGroup label="Url" name="url" data={link} type="text" />
                     <FormCheck label="IsSocial" name="isSocial" data={link} />
@@ -38,4 +42,4 @@ const mapStateToProps = (state) => {
     return { link: state.link.link };
 };
 
-export default connect(mapStateToProps, { linkGet })(Edit);
+export default connect(mapStateToProps, { linkGet, linkUpdate })(Edit);
