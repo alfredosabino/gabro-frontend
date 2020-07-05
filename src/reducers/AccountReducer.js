@@ -22,6 +22,7 @@ export default function (state = intialState, action) {
             if (refreshToken) setRefreshToken(refreshToken);
 
             return { ...state, account };
+
         case SIGN_OUT: {
             removeAccount();
             removeToken();
