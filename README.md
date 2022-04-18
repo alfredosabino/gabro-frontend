@@ -14,3 +14,6 @@ Dependencies:
     "redux": "^4.0.5",
     "redux-promise": "^0.6.0",
     "universal-cookie": "^4.0.3"
+
+Start Project http://localhost:3030/ :
+npm start
